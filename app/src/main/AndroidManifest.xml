@@ -21,9 +21,16 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".P000Menu"></activity>
+
+
+        <activity android:name=".P001UserTimeline"></activity>
+
+        <activity android:name=".P002HomeTimeline"></activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="xxx" />
+            android:value="xxx" />   //change it your own key
     </application>
 
 

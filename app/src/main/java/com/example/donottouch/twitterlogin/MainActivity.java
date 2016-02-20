@@ -3,29 +3,28 @@ package com.example.donottouch.twitterlogin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import java.util.List;
 
-import com.example.donottouch.twitterlogin.backbone.GetTwitterRetrofitAndNetwork;
-import com.example.donottouch.twitterlogin.model.TwitterFollowerStrong;
-import com.example.donottouch.twitterlogin.model.User;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
-import android.widget.ListView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
     TwitterLoginButton twitterLoginButton;
+    Button buttonGoToMyTwitter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final ListView listView= (ListView)findViewById(R.id.listView);
         final TextView textViewIdName=(TextView)findViewById(R.id.textViewIdName);
+        buttonGoToMyTwitter=(Button)findViewById(R.id.buttonGoToMyTwitter);
+        buttonGoToMyTwitter.setOnClickListener(this);
 
         twitterLoginButton=(TwitterLoginButton)findViewById
                 (R.id.twitterLoginButton);
@@ -33,11 +32,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void success(Result<TwitterSession> result) {
 
-
-                String tokenSecret="Token="+result.data.getAuthToken().token+
+                String katar ="Id="+result.data.getId()+"\nUserName="+result.data.getUserName()+
+                        "\nToken="+result.data.getAuthToken().token +
                         "\nSecret="+result.data.getAuthToken().secret;
-
-                String katar ="Id="+result.data.getId()+"\nUserName="+result.data.getUserName();
                 textViewIdName.setText(katar);
             }
 
@@ -53,29 +50,14 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         // Pass the activity result to the login button.
         twitterLoginButton.onActivityResult(requestCode, resultCode, data);
+        buttonGoToMyTwitter.setEnabled(true);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.buttonGoToMyTwitter){
+            Intent intent =new Intent(MainActivity.this,P000Menu.class);
+            startActivity(intent);
+        }
     }
 }
-
-
-
-
-/*
-GetTwitterRetrofitAndNetwork.getTwitterRetrofit(
-result.data.getAuthToken().token,result.data.getAuthToken().secret);
-GetTwitterRetrofitAndNetwork.getTwitterNetwork()
-.getFollowers("-1", "iyibidunya")
-.enqueue(new retrofit2.Callback<TwitterFollowerStrong>() {
-@Override
-public void onResponse(Call<TwitterFollowerStrong> call, Response<TwitterFollowerStrong> response) {
-    List<User> userList=response.body().getUsers();
-
-    ArrayAdapter arrayAdapter=new ArrayAdapter(MainActivity.this,
-            android.R.layout.simple_list_item_1,userList);
-    listView.setAdapter(arrayAdapter);
-}
-
-@Override
-public void onFailure(Call<TwitterFollowerStrong> call, Throwable t) {
-
-}
-});*/

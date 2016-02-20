@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorGrey">
 
     <com.twitter.sdk.android.core.identity.TwitterLoginButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/twitterLoginButton"
+        android:layout_centerInParent="true"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewIdName"
-        android:text="Deneme"
-        android:background="@color/colorAccent"
-        android:layout_below="@+id/twitterLoginButton"/>
-    <ListView
+        android:text="Please, login to see \nyour identity, \naccess token and access secret"
+        android:background="@color/colorLightBlue"
+        android:gravity="center"
+        />
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_below="@+id/textViewIdName"
-        android:background="@color/colorPrimary"/>
+        android:id="@+id/buttonGoToMyTwitter"
+        android:text="Go to my Twitter Account"
+        android:layout_below="@+id/twitterLoginButton"
+        android:enabled="false"/>
 
 </RelativeLayout>

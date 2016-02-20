@@ -1,6 +1,6 @@
 package com.example.donottouch.twitterlogin.backbone;
 
-import com.example.donottouch.twitterlogin.network.TwitterFollowerInterface;
+import com.example.donottouch.twitterlogin.network.TwitterInterface;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -12,8 +12,6 @@ public class GetTwitterRetrofitAndNetwork  {
     public static Retrofit retrofit;
     public static  void getTwitterRetrofit(String AlinanToken,String AlinanTokenSecret){
 
-//OkHttpOAuthConsumer ConsumerClient = new OkHttpOAuthConsumer
-//(AddObjectToApp.CONSUMER_KEY, AddObjectToApp.CONSUMER_SECRET);
 OkHttpOAuthConsumer ConsumerClient = new OkHttpOAuthConsumer
                 (AddObjectToApp.TWITTER_KEY, AddObjectToApp.TWITTER_SECRET);
 ConsumerClient.setTokenWithSecret(AlinanToken,AlinanTokenSecret);
@@ -30,9 +28,9 @@ retrofit=new Retrofit.Builder()
         .build();
 
     }
-    public static TwitterFollowerInterface getTwitterNetwork(){
-        TwitterFollowerInterface twitterFollowerInterface= retrofit
-                .create(TwitterFollowerInterface.class);
-        return twitterFollowerInterface;
+    public static TwitterInterface getTwitterNetwork(){
+        TwitterInterface twitterInterface= retrofit
+                .create(TwitterInterface.class);
+        return twitterInterface;
     }
 }
