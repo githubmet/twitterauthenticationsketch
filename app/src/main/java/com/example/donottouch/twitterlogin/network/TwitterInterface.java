@@ -1,7 +1,10 @@
 package com.example.donottouch.twitterlogin.network;
 
 import com.example.donottouch.twitterlogin.model.TwitterHomeTimelineStrong;
+import com.example.donottouch.twitterlogin.model.TwitterReweetsOfMeStrong;
+import com.example.donottouch.twitterlogin.model.TwitterUserSearchStrong;
 import com.example.donottouch.twitterlogin.model.TwitterUserTimeLineStrong;
+import com.example.donottouch.twitterlogin.model.TwitterUsersShowStrong;
 
 import java.util.List;
 
@@ -15,4 +18,20 @@ public interface TwitterInterface {
 
     @GET("/1.1/statuses/home_timeline.json")
     Call<List<TwitterHomeTimelineStrong>> getHomeTimeline();
+
+    @GET("/1.1/statuses/mentions_timeline.json")
+    Call<List<TwitterReweetsOfMeStrong>> getReweetsOfMe();
+
+    @GET("/1.1/users/show.json")
+    Call<TwitterUsersShowStrong> getUsersShow(@Query("user_id") long id);
+
+    @GET("/1.1/users/search.json")
+    Call<List<TwitterUserSearchStrong>> getUsersSearch(@Query("q") String query);
+
 }
+
+
+/*
+    @GET("/1.1/users/show.json")
+    void show(@Query("user_id") long id, Callback<User> cb);
+*/

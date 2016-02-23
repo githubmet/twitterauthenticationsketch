@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextP005"
+        android:hint="Enter Twitter screen name"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonP005"
+        android:text="Search"
+        android:layout_below="@+id/editTextP005"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listViewP005"
+        android:dividerHeight="2dp"
+        android:divider="@color/colorLightBlue"
+        android:layout_below="@+id/buttonP005"
+        ></ListView>
+</RelativeLayout>

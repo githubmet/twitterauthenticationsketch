@@ -28,9 +28,28 @@
 
         <activity android:name=".P002HomeTimeline"></activity>
 
+        <activity android:name=".P003UserTimelineRecyclerView"></activity>
+
+        <activity android:name=".P004ReweetsOfMe"></activity>
+
+        <activity android:name=".P005UserTimeline"></activity>
+
+        <activity android:name=".P006SearchTimeline"></activity>
+
+        <activity android:name=".P007RequestUserEmailAddress"></activity>
+
+        <activity android:name=".P008getStatuesService"></activity>
+
+        <activity android:name=".P009TweetUtilsTweetView"></activity>
+
+        <activity android:name=".P010UsersShow"></activity>
+
+        <activity android:name=".P011UsersSearch"></activity>
+
+
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="xxx" />   //change it your own key
+            android:value="xxx" />
     </application>
 
 

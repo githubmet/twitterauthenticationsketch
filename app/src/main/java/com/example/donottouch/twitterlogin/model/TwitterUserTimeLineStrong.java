@@ -1,5 +1,7 @@
 package com.example.donottouch.twitterlogin.model;
 
+import java.util.List;
+
 public class TwitterUserTimeLineStrong {
     String id;
     String text;
@@ -10,6 +12,10 @@ public class TwitterUserTimeLineStrong {
     public String getText() {
         return text;
     }
+    public String getPlace() {
+        return place;
+    }
+
 
     user user;
 
@@ -54,4 +60,15 @@ public class TwitterUserTimeLineStrong {
             return description;
         }
     }
+
+        String created_at;
+        String  id_str;
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public String getId_str() {
+        return id_str;
+    }
+
 }

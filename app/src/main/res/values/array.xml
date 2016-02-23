@@ -3,8 +3,16 @@
     <string-array name="activity_name">
         <item>P001UserTimeline</item>
         <item>P002HomeTimeline</item>
-        <item>P003</item>
-        <item>P004</item>
-        <item>P005</item>
+        <item>P003UserTimelineRecyclerView</item>
+        <item>HATAP004ReweetsOfMe</item>
+        <item>P005UserTimeline</item>
+        <item>P006SearchTimeline</item>
+
+        <item>HATAP007RequestUserEmailAddress</item>
+
+        <item>P008getStatuesService</item>
+        <item>P009TweetUtilsTweetView</item>
+        <item>P010UsersShow</item>
+        <item>P011UsersSearch</item>
     </string-array>
 </resources>
