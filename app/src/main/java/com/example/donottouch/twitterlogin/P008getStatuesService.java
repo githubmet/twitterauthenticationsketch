@@ -21,7 +21,6 @@ public class P008getStatuesService extends Activity {
         final TextView textViewP008= (TextView)findViewById(R.id.textViewP008);
 
         //Twitter.getApiClient(). HATA
-        //Asagidaki long deger(524971209851543553L) Tweet id sidir
         TwitterApiClient twitterApiClient= TwitterCore.getInstance().getApiClient();
         StatusesService statusesService=twitterApiClient.getStatusesService();
         statusesService.show(524971209851543553L, null, null, null, new Callback<Tweet>() {

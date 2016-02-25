@@ -14,6 +14,7 @@ import com.example.donottouch.twitterlogin.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+import java.util.Map;
 
 public class P001ArrayAdapter extends ArrayAdapter<TwitterUserTimeLineStrong> {
     Context context;
@@ -44,16 +45,16 @@ public class P001ArrayAdapter extends ArrayAdapter<TwitterUserTimeLineStrong> {
                         "\nfriends count="+user.getFriends_count()+
                         "\nstatuses count="+user.getStatuses_count()
         );
+
         textViewCustomRowBigP001.setText(
-                "verified="+user.getVerified()+
-                "\nTweet Text=" + twitterUserTimeLineStrongList.get(position).getText() +
-                        "\n\ndescription="+user.getDescription()
+                "verified=" + user.getVerified() +
+                        "\nTweet Text=" + twitterUserTimeLineStrongList.get(position).getText() +
+                        "\n\ndescription=" + user.getDescription()
         );
         Picasso.with(context)
                 .load(user.getProfile_image_url_https())
                 .resize(80,80)
                 .into(imageViewCustomRowP001);
-
         return view;
     }
 }

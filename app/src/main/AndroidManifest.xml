@@ -30,7 +30,7 @@
 
         <activity android:name=".P003UserTimelineRecyclerView"></activity>
 
-        <activity android:name=".P004ReweetsOfMe"></activity>
+        <activity android:name=".P004MentionTimeline"></activity>
 
         <activity android:name=".P005UserTimeline"></activity>
 
@@ -45,6 +45,11 @@
         <activity android:name=".P010UsersShow"></activity>
 
         <activity android:name=".P011UsersSearch"></activity>
+
+        <activity android:name=".P012FollowersListWhatAHellCursor"></activity>
+
+        <activity android:name=".P013FollowersList"></activity>
+
 
 
         <meta-data

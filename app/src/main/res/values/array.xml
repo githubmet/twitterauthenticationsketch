@@ -4,7 +4,7 @@
         <item>P001UserTimeline</item>
         <item>P002HomeTimeline</item>
         <item>P003UserTimelineRecyclerView</item>
-        <item>HATAP004ReweetsOfMe</item>
+        <item>P004MentionTimeline</item>
         <item>P005UserTimeline</item>
         <item>P006SearchTimeline</item>
 
@@ -14,5 +14,7 @@
         <item>P009TweetUtilsTweetView</item>
         <item>P010UsersShow</item>
         <item>P011UsersSearch</item>
+        <item>P012FollowersList</item>
+        <item>P013FollowersList</item>
     </string-array>
 </resources>

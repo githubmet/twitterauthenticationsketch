@@ -1,6 +1,7 @@
 package com.example.donottouch.twitterlogin.model;
 
 import java.util.List;
+import java.util.Map;
 
 public class TwitterUserTimeLineStrong {
     String id;
@@ -70,5 +71,4 @@ public class TwitterUserTimeLineStrong {
     public String getId_str() {
         return id_str;
     }
-
 }
